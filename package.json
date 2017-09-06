@@ -1,24 +1,44 @@
 {
   "name": "windows_installer_test",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A windows installer test.",
   "main": "main.js",
-  "scripts": {
-    "start": "electron ."
+  "build": {
+    "appId": "com.electron.app",
+    "win": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": "x64"
+        }
+      ]
+    },
+    "directories": {
+      "output": "../installer"
+    }
   },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "postinstall": "electron-builder install-app-deps",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DanielC2008/windows_installer_test.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Chapdelaine",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DanielC2008/windows_installer_test/issues"
   },
   "homepage": "https://github.com/DanielC2008/windows_installer_test#readme",
   "dependencies": {
-    "electron": "^1.7.5",
     "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "electron": "^1.7.6",
+    "electron-builder": "^19.27.7"
   }
 }
