@@ -1,8 +1,14 @@
 const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
 const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
+const isDev = require('electron-is-dev');
 const path = require('path')
 const url = require('url')
+
+if (isDev) {
+  autoUpdater.updateConfigPath = path.join(__dirname, 'app-update.yml');
+  console.log('Running in development');
+} 
 
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
