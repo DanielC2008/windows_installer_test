@@ -5,8 +5,12 @@ const isDev = require('electron-is-dev');
 const path = require('path')
 const url = require('url')
 
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow
+
 if (isDev) {
-  autoUpdater.updateConfigPath = path.join(__dirname, 'app-update.yml');
+  // autoUpdater.updateConfigPath = path.join(__dirname, 'app-update.yml');
   console.log('Running in development');
 } 
 
@@ -14,21 +18,11 @@ autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
 
-let win;
-
 function sendStatusToWindow(text) {
   log.info(text);
-  win.webContents.send('message', text);
+  mainWindow.webContents.send('message', text);
 }
-function createDefaultWindow() {
-  win = new BrowserWindow();
-  win.webContents.openDevTools();
-  win.on('closed', () => {
-    win = null;
-  });
-  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
-  return win;
-}
+
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })
@@ -50,14 +44,9 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded; will install in 5 seconds');
 });
-app.on('ready', function() {
-  // Create the Menu
-  
-  createDefaultWindow();
-});
 app.on('window-all-closed', () => {
   app.quit();
-  createWindow
+
 });
 
 //-------------------------------------------------------------------
@@ -91,12 +80,10 @@ autoUpdater.on('update-downloaded', (info) => {
 })
 
 app.on('ready', function()  {
+  createWindow()
   autoUpdater.checkForUpdates();
 });
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
 
 function createWindow () {
   // Create the browser window.
