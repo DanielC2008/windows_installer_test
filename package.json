@@ -20,9 +20,9 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
-  "postinstall": "electron-builder install-app-deps",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DanielC2008/windows_installer_test.git"
