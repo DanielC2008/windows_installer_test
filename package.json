@@ -1,6 +1,6 @@
 {
   "name": "windows_installer_test",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A windows installer test.",
   "main": "main.js",
   "build": {
@@ -21,6 +21,7 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
+    "rebuild": "electron-rebuild -f -w electron-updater",
     "postinstall": "electron-builder install-app-deps"
   },
   "repository": {
@@ -40,6 +41,7 @@
   "devDependencies": {
     "electron": "^1.7.6",
     "electron-builder": "^19.27.7",
+    "electron-rebuild": "^1.6.0",
     "electron-updater": "^2.8.9"
   }
 }
