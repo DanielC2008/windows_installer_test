@@ -58,6 +58,4 @@ typings/
 .env
 
 # other files 
-GH_TOKEN.js
-
-
+dev-app-update.yml
