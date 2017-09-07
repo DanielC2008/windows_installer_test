@@ -1,6 +1,6 @@
 {
   "name": "windows_installer_test",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "A windows installer test.",
   "main": "main.js",
   "build": {
