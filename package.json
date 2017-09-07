@@ -15,7 +15,12 @@
     },
     "directories": {
       "output": "../installer"
-    }
+    },
+    "publish": [{
+       "provider": "github",
+       "owner": "Daniel",
+       "repo": "windows_installer_test"
+   }],
   },
   "scripts": {
     "start": "electron .",
