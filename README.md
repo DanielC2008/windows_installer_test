@@ -10,6 +10,19 @@
 
 ##### ***Sign your installer or else bad things will happen!!!***[MSDN signing info](https://docs.microsoft.com/en-us/windows-hardware/drivers/dashboard/update-a-code-signing-certificate)
 
+###Electron Updater
+
+##### Steps to Update using git hub 
+##### Release the release on GitHub editing the release and clicking "Publish release."
+
+##### Download and install the app..
+
+##### Update the version in package.json, commit and push to GitHub.
+
+##### Do steps 5 and 6 again.
+
+##### Open the installed version of the app and see that it updates itself.
+
 ### Info on Git Tags for Versions
 
 ##### Just learned that using git tag must be pushed seperately from a regular git push. Also, this automatically creates a zip and tar.gz file of the project for you.
