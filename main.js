@@ -24,13 +24,6 @@ function sendStatusToWindow(text) {
   log.info(text);
   mainWindow.webContents.send('message', text);
 }
-autoUpdater.setFeedURL({
-  provider: "github",
-  owner: "DanielC2008",
-  repo: "windows_installer_test",
-  host: "github.com",
-  private: false
-})
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 })
