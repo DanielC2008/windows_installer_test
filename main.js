@@ -5,16 +5,10 @@ const isDev = require('electron-is-dev');
 const path = require('path')
 const url = require('url')
 
-// console.log('autoUpdater', autoUpdater.updateConfigPath)
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-// if (isDev) {
-//   autoUpdater.updateConfigPath = path.join(__dirname, 'app-update.yml');
-//   console.log('__dirname', __dirname)
-//   console.log('Running in development', autoUpdater.updateConfigPath);
-// } 
 
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';

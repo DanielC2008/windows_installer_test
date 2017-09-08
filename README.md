@@ -23,6 +23,8 @@
 
 ##### Open the installed version of the app and see that it updates itself.
 
+##### ***You must push your releases to github so it will send the actual file to the /releases on github*** 
+
 ### Info on Git Tags for Versions
 
 ##### Just learned that using git tag must be pushed seperately from a regular git push. Also, this automatically creates a zip and tar.gz file of the project for you.
