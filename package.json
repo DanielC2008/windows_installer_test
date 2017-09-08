@@ -5,13 +5,9 @@
   "main": "main.js",
   "build": {
     "appId": "com.electron.app",
-    "win": {
-      "target": [
-        {
-          "target": "zip",
-          "arch": "x64"
-        }
-      ]
+    "nsis": {
+      "createDesktopShortcut": true,
+      "shortcutName": "Windows Installer"
     },
     "directories": {
       "output": "../installer"
@@ -21,12 +17,11 @@
     }
   },
   "scripts": {
-    "release": "build",
     "start": "electron .",
+    "release": "build",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "postinstall": "electron-builder install-app-deps",
-    "build-win": "electron-builder . --platform win32 --arch x64 dist/ \"(dist|node_modules/electron.*)\" "
+    "postinstall": "electron-builder install-app-deps"
   },
   "repository": {
     "type": "git",
