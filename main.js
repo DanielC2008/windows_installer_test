@@ -5,6 +5,8 @@ const isDev = require('electron-is-dev');
 const path = require('path')
 const url = require('url')
 
+console.log('process.env.GH_TOKEN', process.env.GH_TOKEN)
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
