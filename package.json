@@ -10,7 +10,7 @@
       "shortcutName": "Windows Installer"
     },
     "directories": {
-      "output": "../installer"
+      "output": "C:\\Program Files\\Windows Installer Test"
     },
     "publish": {
       "provider": "github"
